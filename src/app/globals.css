@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@import "@fontsource/big-shoulders-display/700";
+@import "@fontsource/big-shoulders-display/900";
+@import "@fontsource/work-sans/400";
+@import "@fontsource/work-sans/500";
+@import "@fontsource/work-sans/600";
+@import "@fontsource/space-mono/400";
+@import "@fontsource/space-mono/700";
+
+:root {
+  /* ---- Brief palette ---- */
+  --paper: #f2efe2;       /* warm document paper */
+  --paper-dim: #e9e4d2;   /* slightly deeper paper, for panels */
+  --ink: #1c2541;         /* deep navy ink — primary text & dark sections */
+  --ink-soft: #3a4568;    /* softened ink for secondary text on paper */
+  --marigold: #e8a33d;    /* highlighter / stamp accent */
+  --raspberry: #c4364b;   /* alert / CTA accent */
+  --teal: #2f6f62;        /* approved / tag accent */
+
+  --font-display: "Big Shoulders Display", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-marigold: var(--marigold);
+  --color-raspberry: var(--raspberry);
+  --color-teal: var(--teal);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--marigold);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px dashed var(--raspberry);
+  outline-offset: 3px;
+}
+
+/* Repeating diagonal hazard-stripe rule, used sparingly as a document "cut line" */
+.cut-line {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--ink) 0,
+    var(--ink) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+  height: 1px;
+  opacity: 0.25;
+}
+
+/* Dot-grid paper texture for hero/dark panels */
+.doc-grid {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.field-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.stamp {
+  transform: rotate(-4deg);
+}
