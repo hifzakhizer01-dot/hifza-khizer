@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const links = [
   { href: "#about", label: "About" },
   { href: "#focus", label: "Focus" },
@@ -10,13 +12,13 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-brand-teal/15 bg-brand-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a
-          href="#top"
-          className="field-label flex items-center gap-2 text-brand-text"
-        >
-          <span className="inline-block h-2 w-2 rounded-full bg-brand-teal" />
-          Hifza Khizer
-        </a>
+        <Link href="/">
+          <div className="flex items-center gap-2">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-teal text-white font-bold text-sm">
+              HK
+            </span>
+          </div>
+        </Link>
         <nav className="hidden gap-7 md:flex">
           {links.map((l) => (
             <a
