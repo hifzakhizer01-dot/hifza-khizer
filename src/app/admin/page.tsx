@@ -8,11 +8,11 @@ export const metadata = {
 
 export default function AdminPage() {
   return (
-    <div className="min-h-screen bg-paper">
+    <div className="min-h-screen bg-brand-white">
       <div className="mx-auto max-w-5xl px-6 py-16">
         <Link
           href="/"
-          className="field-label text-ink-soft hover:text-raspberry"
+          className="field-label text-brand-muted hover:text-brand-teal-dark"
         >
           ← Back to site
         </Link>
@@ -21,8 +21,8 @@ export default function AdminPage() {
           Project Dashboard
         </h1>
 
-        <div className="mt-6 max-w-2xl rounded-sm border border-marigold/50 bg-marigold/10 p-5 text-sm leading-relaxed text-ink-soft">
-          <p className="field-label mb-2 text-ink">Why this page doesn&apos;t &quot;save&quot;</p>
+        <div className="mt-6 max-w-2xl rounded-sm border border-brand-orange/50 bg-brand-orange/10 p-5 text-sm leading-relaxed text-brand-muted">
+          <p className="field-label mb-2 text-brand-text">Why this page doesn&apos;t &quot;save&quot;</p>
           <p>
             This portfolio is a <strong>static site</strong> — it&apos;s just
             HTML, CSS and JS files with no database attached, which is exactly

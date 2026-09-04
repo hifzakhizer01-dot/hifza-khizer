@@ -7,6 +7,7 @@
 
 export const profile = {
   name: "Hifza Khizer",
+  heroImage: "/images/profile.jpeg",
   tagline: "Digital Marketing Student — Turning Curiosity into Campaigns",
   location: "Rawalpindi, Pakistan",
   status: "Open to internships & entry-level marketing roles",
@@ -83,7 +84,8 @@ export type Project = {
   tags: string[];
   link?: string;
   linkLabel?: string;
-  accent: "marigold" | "raspberry" | "teal";
+  accent: "orange" | "teal-dark" | "teal";
+  images: string[];
   featured?: boolean;
 };
 
@@ -108,6 +110,12 @@ export const projects: Project[] = [
     link: "https://www.instagram.com/voicetact/",
     linkLabel: "View @voicetact",
     accent: "teal",
+    images: [
+      "/images/voicetact1.png",
+      "/images/voicetact2.png",
+      "/images/voicetact3.png",
+      "/images/voicetact4.png",
+    ],
     featured: true,
   },
   {
@@ -123,7 +131,11 @@ export const projects: Project[] = [
       "This is the project that made me want to study marketing on purpose, not just do it by instinct.",
     ],
     tags: ["Instagram", "Founder", "Content"],
-    accent: "marigold",
+    accent: "orange",
+    images: [
+      "/images/work/tohfatales-1.jpg",
+      "/images/work/tohfatales-2.jpg",
+    ],
     featured: true,
   },
   {
@@ -139,6 +151,7 @@ export const projects: Project[] = [
       "Project link coming soon.",
     ],
     tags: ["Machine Learning", "Python", "CNN"],
-    accent: "raspberry",
+    accent: "teal-dark",
+    images: ["/images/work/cnn-classifier-diagram.png"],
   },
 ];

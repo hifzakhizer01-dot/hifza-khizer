@@ -1,19 +1,20 @@
 import { profile } from "@/data/content";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section
       id="top"
-      className="doc-grid relative overflow-hidden border-b border-ink/15 bg-ink text-paper"
-      style={{ color: "var(--paper)" }}
+      className="doc-grid relative overflow-hidden border-b border-brand-navy/15 bg-brand-navy text-brand-white"
     >
       <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-20 md:pt-36 md:pb-28">
         {/* stamp */}
-        <div className="stamp absolute right-6 top-24 hidden select-none rounded-full border-2 border-marigold px-4 py-2 md:block">
-          <span className="field-label text-marigold">Brief Approved</span>
-        </div>
+        <div className="absolute right-6 top-24 hidden h-72 w-72 rounded-full bg-brand-teal/90 md:block" />
 
-        <p className="field-label mb-6 text-marigold">
+        <div className="relative grid items-center gap-12 md:grid-cols-[1fr_280px]">
+          <div>
+
+        <p className="field-label mb-6 text-brand-orange">
           Campaign Brief — Candidate Profile
         </p>
 
@@ -23,11 +24,11 @@ export default function Hero() {
           Khizer
         </h1>
 
-        <p className="mt-6 max-w-xl text-lg text-paper/85 md:text-xl">
+        <p className="mt-6 max-w-xl text-lg text-brand-dark-muted md:text-xl">
           {profile.tagline}
         </p>
 
-        <div className="mt-10 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-5 border-t border-paper/20 pt-6 sm:grid-cols-4">
+        <div className="mt-10 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-5 border-t border-brand-white/20 pt-6 sm:grid-cols-4">
           <Field label="Location" value={profile.location.split(",")[0]} />
           <Field label="Education" value="BS Data Analytics" />
           <Field label="Focus" value="Marketing" />
@@ -37,16 +38,30 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap gap-3">
           <a
             href="#projects"
-            className="field-label rounded-sm bg-marigold px-5 py-3 text-ink transition-transform hover:-translate-y-0.5"
+            className="field-label rounded-full bg-brand-teal px-5 py-3 text-brand-white transition-colors hover:bg-brand-teal-dark"
           >
             View the work
           </a>
           <a
             href="#contact"
-            className="field-label rounded-sm border border-paper/40 px-5 py-3 text-paper transition-colors hover:border-paper hover:bg-paper/10"
+            className="field-label rounded-full border border-brand-white/40 px-5 py-3 text-brand-white transition-colors hover:border-brand-white hover:bg-brand-white/10"
           >
             Say hello
           </a>
+        </div>
+
+          </div>
+          <div className="relative mx-auto w-full max-w-xs">
+            <div className="absolute inset-4 rounded-full bg-brand-teal" />
+            <Image
+              src={profile.heroImage}
+              alt={profile.name}
+              width={320}
+              height={400}
+              className="relative aspect-[4/5] w-full rounded-[45%] object-cover shadow-2xl"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -64,10 +79,10 @@ function Field({
 }) {
   return (
     <div>
-      <p className="field-label text-paper/50">{label}</p>
+      <p className="field-label text-brand-dark-muted">{label}</p>
       <p
         className={`mt-1 font-mono text-sm ${
-          accent ? "text-marigold" : "text-paper"
+          accent ? "text-brand-orange" : "text-brand-white"
         }`}
       >
         {value}

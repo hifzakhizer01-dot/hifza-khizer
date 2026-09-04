@@ -8,14 +8,14 @@
 @import "@fontsource/space-mono/700";
 
 :root {
-  /* ---- Brief palette ---- */
-  --paper: #f2efe2;       /* warm document paper */
-  --paper-dim: #e9e4d2;   /* slightly deeper paper, for panels */
-  --ink: #1c2541;         /* deep navy ink — primary text & dark sections */
-  --ink-soft: #3a4568;    /* softened ink for secondary text on paper */
-  --marigold: #e8a33d;    /* highlighter / stamp accent */
-  --raspberry: #c4364b;   /* alert / CTA accent */
-  --teal: #2f6f62;        /* approved / tag accent */
+  --brand-teal: #14a8a0;
+  --brand-teal-dark: #0d8a83;
+  --brand-orange: #f4a825;
+  --brand-navy: #0b1620;
+  --brand-white: #ffffff;
+  --brand-text: #1b1f23;
+  --brand-muted: #5b6470;
+  --brand-dark-muted: #a9b4be;
 
   --font-display: "Big Shoulders Display", sans-serif;
   --font-body: "Work Sans", sans-serif;
@@ -23,13 +23,14 @@
 }
 
 @theme inline {
-  --color-paper: var(--paper);
-  --color-paper-dim: var(--paper-dim);
-  --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-marigold: var(--marigold);
-  --color-raspberry: var(--raspberry);
-  --color-teal: var(--teal);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-teal-dark: var(--brand-teal-dark);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-white: var(--brand-white);
+  --color-brand-text: var(--brand-text);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-dark-muted: var(--brand-dark-muted);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -57,18 +58,18 @@ html {
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--brand-white);
+  color: var(--brand-text);
   font-family: var(--font-body);
 }
 
 ::selection {
-  background: var(--marigold);
-  color: var(--ink);
+  background: var(--brand-orange);
+  color: var(--brand-text);
 }
 
 :focus-visible {
-  outline: 2px dashed var(--raspberry);
+  outline: 2px dashed var(--brand-teal);
   outline-offset: 3px;
 }
 
@@ -76,8 +77,8 @@ body {
 .cut-line {
   background-image: repeating-linear-gradient(
     -45deg,
-    var(--ink) 0,
-    var(--ink) 1px,
+    var(--brand-navy) 0,
+    var(--brand-navy) 1px,
     transparent 1px,
     transparent 8px
   );

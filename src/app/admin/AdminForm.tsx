@@ -2,13 +2,13 @@
 
 import { useMemo, useState } from "react";
 
-const accents = ["marigold", "raspberry", "teal"] as const;
+const accents = ["orange", "teal-dark", "teal"] as const;
 type Accent = (typeof accents)[number];
 
 const accentClass: Record<Accent, string> = {
-  marigold: "bg-marigold",
-  raspberry: "bg-raspberry",
-  teal: "bg-teal",
+  orange: "bg-brand-orange",
+  "teal-dark": "bg-brand-teal-dark",
+  teal: "bg-brand-teal",
 };
 
 function slugify(input: string) {
@@ -28,7 +28,7 @@ export default function AdminForm() {
   const [tagsRaw, setTagsRaw] = useState("");
   const [link, setLink] = useState("");
   const [linkLabel, setLinkLabel] = useState("");
-  const [accent, setAccent] = useState<Accent>("marigold");
+  const [accent, setAccent] = useState<Accent>("orange");
   const [copied, setCopied] = useState(false);
 
   const slug = useMemo(() => slugify(title || "new-project"), [title]);
@@ -166,8 +166,8 @@ ${detailsCode}
                 onClick={() => setAccent(a)}
                 className={`flex items-center gap-2 rounded-full border px-3 py-1.5 field-label transition-colors ${
                   accent === a
-                    ? "border-ink bg-ink text-paper"
-                    : "border-ink/25 text-ink-soft"
+                    ? "border-brand-teal bg-brand-teal text-brand-white"
+                    : "border-brand-teal/25 text-brand-muted"
                 }`}
               >
                 <span className={`h-2.5 w-2.5 rounded-full ${accentClass[a]}`} />
@@ -181,27 +181,27 @@ ${detailsCode}
       {/* ---------- PREVIEW + CODE ---------- */}
       <div className="space-y-6">
         <div>
-          <p className="field-label mb-2 text-ink-soft">Live preview</p>
-          <div className="rounded-sm border border-ink/15 bg-ink p-6 text-paper">
+          <p className="field-label mb-2 text-brand-muted">Live preview</p>
+          <div className="rounded-sm border border-brand-navy/15 bg-brand-navy p-6 text-brand-white">
             <div className="mb-2 flex flex-wrap items-center gap-3">
-              <span className="field-label text-marigold">
+              <span className="field-label text-brand-orange">
                 {category || "Category"}
               </span>
-              <span className="field-label text-paper/40">
+              <span className="field-label text-brand-dark-muted">
                 {client || "Client / context"}
               </span>
             </div>
             <h3 className="font-display text-2xl font-bold tracking-tight">
               {title || "Project title"}
             </h3>
-            <p className="mt-2 text-sm text-paper/75">
+            <p className="mt-2 text-sm text-brand-dark-muted">
               {summary || "One-sentence summary of the project."}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               {(tags.length ? tags : ["Tag"]).map((t, i) => (
                 <span
                   key={i}
-                  className="field-label rounded-full border border-paper/25 px-3 py-1 text-paper/70"
+                  className="field-label rounded-full border border-brand-white/25 px-3 py-1 text-brand-dark-muted"
                 >
                   {t}
                 </span>
@@ -209,7 +209,7 @@ ${detailsCode}
             </div>
             {link && (
               <span
-                className={`field-label mt-4 inline-flex w-fit items-center gap-2 rounded-sm ${accentClass[accent]} px-4 py-2 text-ink`}
+                className={`field-label mt-4 inline-flex w-fit items-center gap-2 rounded-full ${accentClass[accent]} px-4 py-2 text-brand-navy`}
               >
                 {linkLabel || "View project"} ↗
               </span>
@@ -219,18 +219,18 @@ ${detailsCode}
 
         <div>
           <div className="mb-2 flex items-center justify-between">
-            <p className="field-label text-ink-soft">
+            <p className="field-label text-brand-muted">
               Code — paste into <code className="font-mono">projects[]</code>
             </p>
             <button
               type="button"
               onClick={handleCopy}
-              className="field-label rounded-sm border border-ink px-3 py-1.5 transition-colors hover:bg-ink hover:text-paper"
+              className="field-label rounded-full border border-brand-teal px-3 py-1.5 transition-colors hover:bg-brand-teal hover:text-brand-white"
             >
               {copied ? "Copied!" : "Copy code"}
             </button>
           </div>
-          <pre className="overflow-x-auto rounded-sm border border-ink/15 bg-paper-dim p-4 font-mono text-xs leading-relaxed text-ink">
+          <pre className="overflow-x-auto rounded-sm border border-brand-teal/15 bg-brand-white p-4 font-mono text-xs leading-relaxed text-brand-text">
             {code}
           </pre>
         </div>
@@ -239,15 +239,15 @@ ${detailsCode}
       <style jsx global>{`
         .input {
           width: 100%;
-          border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
-          background: var(--paper);
+          border: 1px solid color-mix(in srgb, var(--brand-teal) 20%, transparent);
+          background: var(--brand-white);
           border-radius: 2px;
           padding: 0.6rem 0.75rem;
           font-size: 0.9rem;
-          color: var(--ink);
+          color: var(--brand-text);
         }
         .input:focus {
-          outline: 2px dashed var(--raspberry);
+          outline: 2px dashed var(--brand-teal);
           outline-offset: 2px;
         }
       `}</style>
@@ -258,7 +258,7 @@ ${detailsCode}
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="field-label mb-1.5 block text-ink-soft">{label}</span>
+      <span className="field-label mb-1.5 block text-brand-muted">{label}</span>
       {children}
     </label>
   );
