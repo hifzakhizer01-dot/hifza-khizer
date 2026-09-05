@@ -114,20 +114,33 @@ function ProjectCard({ project }: { project: Project }) {
 function ProjectImageGrid({ project }: { project: Project }) {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-      {project.images.map((image, index) => (
-        <div
-          key={image}
-          className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand-teal/30 bg-brand-white/5 shadow-sm transition-shadow hover:border-brand-teal hover:shadow-lg hover:shadow-brand-teal/20"
-        >
-          <Image
-            src={image}
-            alt={`${project.title} work sample ${index + 1}`}
-            fill
-            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 30vw, 45vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-      ))}
+      {project.images.map((image, index) => {
+        const frame = (
+          <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand-teal/30 bg-brand-white/5 shadow-sm transition-shadow hover:border-brand-teal hover:shadow-lg hover:shadow-brand-teal/20">
+            <Image
+              src={image}
+              alt={`${project.title} work sample ${index + 1}`}
+              fill
+              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 30vw, 45vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+        );
+
+        return project.link ? (
+          <a
+            key={image}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open ${project.title} on Instagram`}
+          >
+            {frame}
+          </a>
+        ) : (
+          <div key={image}>{frame}</div>
+        );
+      })}
     </div>
   );
 }
