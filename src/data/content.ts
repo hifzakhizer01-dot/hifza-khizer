@@ -127,16 +127,15 @@ export const projects: Project[] = [
     summary:
       "A gift-basket business built and run on Instagram — the project that turned into a marketing habit.",
     details: [
-      "Founded and ran the Instagram page end to end: product photos, captions, posting schedule and customer messages.",
-      "Tested different captions, posting times, and product photos to see what actually drove engagement and sales.",
+      "Founded and ran the Instagram page end to end: product photos, captions, posting schedule, and customer messages.",
+      "Used the page as a real-world lab for testing what content style and timing actually converted into orders.",
       "This is the project that made me want to study marketing on purpose, not just do it by instinct.",
     ],
     tags: ["Instagram", "Founder", "Content"],
+    link: "https://www.instagram.com/tohfatalespk/",
+    linkLabel: "View @tohfatalespk",
     accent: "orange",
-    images: [
-      "/images/work/tohfatales-1.jpg",
-      "/images/work/tohfatales-2.jpg",
-    ],
+    images: ["/images/tohfatales_preview.png"],
     featured: true,
   },
 ];
