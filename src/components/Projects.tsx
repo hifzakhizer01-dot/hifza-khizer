@@ -106,7 +106,6 @@ function ProjectCard({ project }: { project: Project }) {
         <ProjectImageGrid project={project} />
 
         {project.slug === "voicetact" && <CalendarStrip />}
-        {project.slug === "cnn-product-classifier" && <ClassifierTape />}
       </div>
     </article>
   );
@@ -160,34 +159,6 @@ function CalendarStrip() {
           </div>
         ))}
       </div>
-      <p className="mt-2 text-[11px] text-brand-dark-muted/70">
-        B2B pages earn trust with consistency, not volume — a steady
-        cadence beat frequent posting.
-      </p>
-    </div>
-  );
-}
-
-/** Signature module — a "print-out" data tape for the CNN classifier. */
-function ClassifierTape() {
-  const rows = [
-    ["input", "product_image.jpg"],
-    ["model", "CNN, 4 conv layers"],
-    ["classes", "12 product categories"],
-    ["status", "training complete"],
-  ];
-
-  return (
-    <div className="rounded-sm border border-brand-teal-dark/40 bg-brand-white/5 p-4 font-mono text-xs">
-      {rows.map(([k, v]) => (
-        <div
-          key={k}
-          className="flex justify-between gap-4 border-b border-brand-white/10 py-1.5 last:border-0"
-        >
-          <span className="text-brand-dark-muted">{k}</span>
-          <span className="text-brand-white/80">{v}</span>
-        </div>
-      ))}
     </div>
   );
 }
