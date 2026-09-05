@@ -29,7 +29,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-3xl lg:mx-0">
-        <h1 className="text-6xl font-extrabold leading-[0.95] tracking-tight text-white lg:text-7xl">
+        <h1 className="font-display text-7xl font-black uppercase leading-[0.9] tracking-tight text-white lg:text-8xl">
           {firstName}
           <br />
           {lastName}
