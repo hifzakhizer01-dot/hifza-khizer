@@ -104,6 +104,7 @@ function ProjectCard({ project }: { project: Project }) {
         </ul>
 
         <ProjectImageGrid project={project} />
+
         {project.slug === "voicetact" && <CalendarStrip />}
         {project.slug === "cnn-product-classifier" && <ClassifierTape />}
       </div>
@@ -117,7 +118,7 @@ function ProjectImageGrid({ project }: { project: Project }) {
       {project.images.map((image, index) => (
         <div
           key={image}
-          className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-brand-teal/30 bg-brand-white/5 shadow-sm transition-shadow hover:border-brand-teal hover:shadow-lg hover:shadow-brand-teal/20"
+          className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand-teal/30 bg-brand-white/5 shadow-sm transition-shadow hover:border-brand-teal hover:shadow-lg hover:shadow-brand-teal/20"
         >
           <Image
             src={image}
@@ -135,7 +136,8 @@ function ProjectImageGrid({ project }: { project: Project }) {
 /** Signature module — a B2B posting-rhythm strip for the VoiceTact case study. */
 function CalendarStrip() {
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  const posted = [true, false, true, false, true, false, false];
+  const posted = [true, true, true, true, true, false, false];
+
   return (
     <div>
       <p className="field-label mb-2 text-brand-teal">Weekly posting rhythm</p>
@@ -174,6 +176,7 @@ function ClassifierTape() {
     ["classes", "12 product categories"],
     ["status", "training complete"],
   ];
+
   return (
     <div className="rounded-sm border border-brand-teal-dark/40 bg-brand-white/5 p-4 font-mono text-xs">
       {rows.map(([k, v]) => (
