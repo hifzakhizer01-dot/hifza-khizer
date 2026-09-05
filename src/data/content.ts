@@ -9,18 +9,18 @@ export const profile = {
   name: "Hifza Khizer",
   heroImage: "/images/profile.jpeg",
   tagline: "Digital Marketing Student — Turning Curiosity into Campaigns",
-  location: "Rawalpindi, Pakistan",
+  location: "Pakistan",
   status: "Open to internships & entry-level marketing roles",
-  education: "BS Business Data Analytics, Marketing Major — 3rd Year",
+  education: "BS Business Data Analytics, Marketing Major",
   email: "hifzakhizer01@gmail.com",
   phone: "0312 5687924",
   phoneHref: "tel:+923125687924",
   linkedin: "https://www.linkedin.com/in/hifza-khizer-683294322/",
   bio: [
-    "I'm a Business Data Analytics student with a marketing major — the kind of mix that makes me equally happy in a spreadsheet and in a caption box.",
-    "It started with Tohfa Tales PK, a small gift-basket business I ran on Instagram. I opened the account to sell baskets and ended up falling for the content side of it — planning posts, watching what worked, chasing the numbers.",
+    "I'm a Business Data Analytics student with a marketing major the kind of mix that makes me equally happy in a spreadsheet and in a caption box.",
+    "It started with Tohfa Tales PK, a small gift-basket business I ran on Instagram. I opened the account to sell baskets and ended up falling for the content side of it planning posts, watching what worked, chasing the numbers.",
     "That pulled me into an internship at Visiontact, where I managed social media for their product VoiceTact and learned how B2B posting actually works: fewer trends, more trust.",
-    "Next, I'm chasing performance marketing, SEO, and content creation — the parts of the funnel where the data and the creative have to agree with each other.",
+    "Next, I'm chasing performance marketing, SEO and content creation the parts of the funnel where the data and the creative have to agree with each other.",
   ],
 };
 
@@ -60,7 +60,7 @@ export const timeline = [
     title: "Marketing Intern",
     place: "Visiontact — VoiceTact",
     description:
-      "Managed social media for VoiceTact, Visiontact's product account. Learned B2B posting specifically — a different rhythm from consumer content, built on consistency and credibility over virality.",
+      "Managed social media for VoiceTact, Visiontact's product account. Learned B2B posting specifically a different rhythm from consumer content, built on consistency and credibility over virality.",
     tag: "B2B Social",
   },
   {
@@ -69,7 +69,7 @@ export const timeline = [
     title: "Exploring Performance Marketing",
     place: "Self-directed learning",
     description:
-      "Currently going deeper into performance marketing, SEO, and content creation — connecting the campaign-brief thinking from my degree to hands-on, data-backed execution.",
+      "Currently going deeper into performance marketing, SEO and content creation connecting the campaign-brief thinking from my degree to hands-on, data-backed execution.",
     tag: "In progress",
   },
 ];
@@ -102,9 +102,9 @@ export const projects: Project[] = [
     summary:
       "Ran the day-to-day social presence for VoiceTact, Visiontact's product account, during a marketing internship.",
     details: [
-      "Planned and posted content for a B2B audience — a slower, trust-first rhythm compared to consumer pages.",
-      "Learned to brief, schedule, and publish through Meta Business Suite as part of a real product's marketing calendar.",
-      "Design assets for this case study are being finalised — check back soon, or view the live account below.",
+      "Published content for VoiceTact's B2B audience, focusing on consistency and trust over trends..",
+      "Used Meta Business Suite to plan and manage a content calendar, scheduling posts ahead of time.",
+      "Used AI tools to help draft and refine post elements, speeding up content creation while keeping the messaging on-brand.",
     ],
     tags: ["B2B", "Social Media", "Meta Business Suite"],
     link: "https://www.instagram.com/voicetact/",
