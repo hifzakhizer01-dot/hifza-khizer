@@ -34,9 +34,8 @@ export default function Projects() {
             </h2>
           </div>
           <p className="max-w-2xl text-brand-dark-muted leading-relaxed">
-            Three ways I&apos;ve practiced marketing so far: running a real
-            Instagram business, posting for a B2B product, and building a
-            classifier that puts my data-analytics half to use.
+            Two ways I&apos;ve practiced marketing so far: running a real
+            Instagram business and posting for a B2B product.
           </p>
         </div>
 
