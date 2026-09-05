@@ -93,6 +93,7 @@ export type Project = {
 // PROJECTS — the /admin page generates new entries in exactly
 // this shape. Paste new objects into this array.
 // ─────────────────────────────────────────────────────────────
+
 export const projects: Project[] = [
   {
     slug: "voicetact",
@@ -137,21 +138,5 @@ export const projects: Project[] = [
       "/images/work/tohfatales-2.jpg",
     ],
     featured: true,
-  },
-  {
-    slug: "cnn-product-classifier",
-    title: "CNN Product Classifier",
-    client: "Personal project",
-    category: "Data Analytics × Marketing",
-    summary:
-      "A convolutional neural network that classifies product images — the data-analytics half of my degree applied to a marketing problem.",
-    details: [
-      "Built to explore how image classification could support catalogue tagging and product discovery.",
-      "Reflects the Business Data Analytics side of my degree — comfortable moving between a model and a media plan.",
-      "Project link coming soon.",
-    ],
-    tags: ["Machine Learning", "Python", "CNN"],
-    accent: "teal-dark",
-    images: ["/images/work/cnn-classifier-diagram.png"],
   },
 ];
