@@ -112,17 +112,37 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 function ProjectImageGrid({ project }: { project: Project }) {
+  const isSingleLandscape = project.images.length === 1;
+
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+    <div
+      className={
+        isSingleLandscape
+          ? "grid grid-cols-1"
+          : "grid grid-cols-2 gap-3 sm:grid-cols-3"
+      }
+    >
       {project.images.map((image, index) => {
         const frame = (
-          <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand-teal/30 bg-brand-white/5 shadow-sm transition-shadow hover:border-brand-teal hover:shadow-lg hover:shadow-brand-teal/20">
+          <div
+            className={`group relative overflow-hidden rounded-2xl border border-brand-teal/30 bg-brand-white/5 shadow-sm transition-shadow hover:border-brand-teal hover:shadow-lg hover:shadow-brand-teal/20 ${
+              isSingleLandscape ? "aspect-[1408/837]" : "aspect-[4/5]"
+            }`}
+          >
             <Image
               src={image}
               alt={`${project.title} work sample ${index + 1}`}
               fill
-              sizes="(min-width: 1024px) 30vw, (min-width: 640px) 30vw, 45vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes={
+                isSingleLandscape
+                  ? "(min-width: 1024px) 55vw, 90vw"
+                  : "(min-width: 1024px) 30vw, (min-width: 640px) 30vw, 45vw"
+              }
+              className={
+                isSingleLandscape
+                  ? "object-contain transition-transform duration-500 group-hover:scale-105"
+                  : "object-cover transition-transform duration-500 group-hover:scale-105"
+              }
             />
           </div>
         );
